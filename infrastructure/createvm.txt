@@ -8,7 +8,7 @@
       ad_user: r0801881@student.thomasmore.be
       password: admin
       subscription_id: f8dc953a-e967-4e6e-be08-141d9ab31959
-      resource_group: RG_Jenkins
+      resource_group: jenkings_group
       name: myVM
       vm_size: Standard_B1s
       admin_username: admin
