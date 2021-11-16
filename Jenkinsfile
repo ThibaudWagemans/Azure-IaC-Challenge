@@ -11,7 +11,7 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -i Ubuntuserver1 gebruiker1@23.97.208.79 sudo git -C /var/www/html pull'
+                sh 'ssh gebruiker1@23.97.208.79 sudo git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
