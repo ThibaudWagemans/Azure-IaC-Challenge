@@ -11,7 +11,7 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'git -C /var/www/html pull'
+                sh 'git /var/www/html pull'
             }
         }
         stage('Check website is up') {
