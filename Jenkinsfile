@@ -4,7 +4,7 @@ pipeline {
         stage('Clone the repo') {
             steps {
                 echo 'clone the repo'
-                sh 'rm -fr Azure-IaC-Challeng'
+                sh 'rm -fr Azure-IaC-Challenge'
                 sh 'git clone https://github.com/ThibaudWagemans/Azure-IaC-Challenge.git'
             }
         }
