@@ -11,7 +11,7 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -i /var/lib/jenkins/working.pem gebruiker1@13.95.21.28 sudo git -C /var/www/html pull'
+                sh 'ssh -i /var/lib/jenkins/working.pem gebruiker1@13.95.21.28 ls -ltrh'
             }
         }
         stage('Check website is up') {
