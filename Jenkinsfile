@@ -11,13 +11,13 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -i ~/working.pem gebruiker1@13.93.14.86 sudo git -C /var/www/html pull'
+                sh 'ssh -i ~/working.pem gebruiker1@13.95.21.28 sudo git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is 13.80.181.92 | head -n 1'
+                sh 'curl -Is 13.95.21.28 | head -n 1'
             }
         }
     }
