@@ -11,7 +11,7 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -o "StrictHostKeyChecking no" gebruiker1@52.142.220.237 sudo git -C /var/www/html pull'
+                sh 'ssh -o "StrictHostKeyChecking no" 52.142.220.237 sudo git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
