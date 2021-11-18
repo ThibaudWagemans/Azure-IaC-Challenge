@@ -5,20 +5,19 @@ pipeline {
             steps {
                 echo 'clone the repo'
                 sh 'rm -fr Azure-IaC-Challenge'
-                sh 'git clone https://github.com/ThibaudWagemans/Azure-IaC-Challenge.git'
+                sh 'git clone https://github.com/dmccuk/webapp1.git'
             }
         }
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                 sh -oStrictHostKeyChecking=no host
-                sh 'ssh -i /var/lib/jenkins/working.pem gebruiker1@13.95.21.28 sudo git -C /var/www/html pull'
+                sh 'ssh -o "StrictHostKeyChecking no" gebruiker1@20.105.135.59 git -C /var/www/IaC/html pull'
             }
         }
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is 13.95.21.28 | head -n 1'
+                sh 'curl -Is  | head -n 1'
             }
         }
     }
