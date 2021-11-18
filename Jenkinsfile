@@ -12,7 +12,8 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh-copy-id gebruiker1@20.105.135.59 git -C /var/www/html pull'
+                sh 'ssh-copy-id gebruiker1@20.105.135.59'
+                sh 'git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
