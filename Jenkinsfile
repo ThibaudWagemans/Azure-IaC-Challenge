@@ -12,7 +12,7 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -tt gebruiker1@20.105.135.59 git -C /var/www/html pull'
+                sh 'ssh -i /home/gebruiker1/.ssh/working.pem gebruiker1@20.105.135.59 git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
