@@ -4,20 +4,21 @@ pipeline {
         stage('Clone the repo') {
             steps {
                 echo 'clone the repo'
-                sh 'rm -fr html'
-                sh 'git clone https://github.com/ThibaudWagemans/Azure-IaC-Challenge'
+                sh 'cd /var/www/html'
+                sh 'rm -fr webapp1'
+                sh 'git clone https://github.com/dmccuk/webapp1.git'
             }
         }
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -i /var/www/IaC/html/working.pem gebruiker1@13.80.181.92 sudo git -C /var/www/html pull'
+                sh 'ssh-copy-id gebruiker1@20.105.135.59'
+                sh 'git -C /var/www/html pull'
             }
         }
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is 13.80.181.92 | head -n 1'
             }
         }
     }
