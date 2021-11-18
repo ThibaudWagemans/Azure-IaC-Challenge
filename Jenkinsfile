@@ -18,7 +18,6 @@ pipeline {
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                #sh 'curl -Is  | head -n 1'
             }
         }
     }
