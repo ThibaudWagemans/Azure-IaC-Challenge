@@ -4,7 +4,8 @@ pipeline {
         stage('Clone the repo') {
             steps {
                 echo 'clone the repo'
-                sh 'rm -fr Azure-IaC-Challenge'
+                sh 'cd /var/www/html'
+                sh 'rm -fr webapp1'
                 sh 'git clone https://github.com/dmccuk/webapp1.git'
             }
         }
@@ -17,7 +18,7 @@ pipeline {
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is  | head -n 1'
+                #sh 'curl -Is  | head -n 1'
             }
         }
     }
